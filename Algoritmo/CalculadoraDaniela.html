@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <h2>Simulador Financeiro</h2>
+    Número de lotes transportados por mês: <input id="ipt_lote"><br><br>
+    Valor médio por lote: <input id="ipt_valor"><br><br>
+    Número de vacinas que sofreram alteração: <input id="ipt_alteradas"><br><br>
+    <button onclick="calcular()">Calcular Prejuízo</button>
+    <p id="p_txt"></p>
+</body>
+</html>
+<script>
+    function calcular() {
+        var num_lotes = Number (ipt_lote.value);
+        var valor_lote = Number (ipt_valor.value);
+        var deterioradas = Number (ipt_alteradas.value);
+        var prejuizo = (deterioradas * 0.80);
+        var custo_perda = deterioradas * valor_lote
+        p_txt.innerHTML = `A porcentagem de vacinas deterioradas é de ${prejuizo}%, e isso custa R$${custo_perda} reais.`
+    }
+</script>
