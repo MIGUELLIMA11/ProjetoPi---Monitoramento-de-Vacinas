@@ -26,11 +26,20 @@ Create Table Metrica
 IdMetrica INT PRIMARY KEY auto_increment,
 TemperaturaMedia float,
 TemperaturaReal float,
-DataMedicao date
+DataMedicao date,
+TipoVacina varchar(45),
+NomeVacina varchar(45),
+TemperaturaIdeal float
 );
+
 
 Insert into Sensor (NomeSensor, TemperaturaMax, TemperaturaMin) values
 ('Sensor LM35', 15, -5),
 ('Sensor LM35', 21, -6);
 
+Insert into Metrica (TemperaturaMedia, TemperaturaReal, DataMedicao, TipoVacina, NomeVacina, TemperaturaIdeal)values
+(9,14,'2025-10-12', 'Termolabel','Covid-19', 9),
+(4,14,'2025-06-29', 'Termolabel','Sars-19', 5);
+
 Select * from Sensor where TemperaturaMax >= 21;
+Select * from Metrica where TemperaturaIdeal = 5;
